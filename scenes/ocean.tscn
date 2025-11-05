@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5m7cjrvxyv38"]
+
+[ext_resource type="Texture2D" uid="uid://dfi8dqs14tcta" path="res://sprites/FundoDoMar.png" id="1_2cota"]
+[ext_resource type="Texture2D" uid="uid://bv2m6muo2ldh7" path="res://sprites/Fazendeira.png" id="2_tag51"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2xhg"]
+radius = 22.0
+height = 68.0
+
+[node name="Ocean" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="FundoDoMarSprite" type="Sprite2D" parent="."]
+position = Vector2(576.5, 323.5)
+scale = Vector2(0.750651, 0.637695)
+texture = ExtResource("1_2cota")
+metadata/_edit_lock_ = true
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(158, 61)
+metadata/_edit_lock_ = true
+
+[node name="Fazendeira" type="Sprite2D" parent="Player"]
+position = Vector2(0, -2.38419e-07)
+scale = Vector2(1.34375, 1.34375)
+texture = ExtResource("2_tag51")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(9, -5)
+shape = SubResource("CapsuleShape2D_g2xhg")
