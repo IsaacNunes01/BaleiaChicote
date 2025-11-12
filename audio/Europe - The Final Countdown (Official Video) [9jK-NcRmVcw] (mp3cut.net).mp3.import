@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1oqikje1hyju"
+path="res://.godot/imported/Europe - The Final Countdown (Official Video) [9jK-NcRmVcw] (mp3cut.net).mp3-d14d608936c6e0238f8a9a79f2f58d11.mp3str"
+
+[deps]
+
+source_file="res://audio/Europe - The Final Countdown (Official Video) [9jK-NcRmVcw] (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/Europe - The Final Countdown (Official Video) [9jK-NcRmVcw] (mp3cut.net).mp3-d14d608936c6e0238f8a9a79f2f58d11.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

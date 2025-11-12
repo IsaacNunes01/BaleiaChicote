@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b5m7cjrvxyv38"]
+[gd_scene load_steps=23 format=3 uid="uid://b5m7cjrvxyv38"]
 
 [ext_resource type="Texture2D" uid="uid://dfogjbb5eboh" path="res://sprites/jubarte1.png" id="1_ijn1w"]
 [ext_resource type="Script" path="res://scripts/ocean.gd" id="1_shac2"]
@@ -44,18 +44,6 @@ animations = [{
 radius = 22.0
 height = 68.0
 
-[sub_resource type="Animation" id="Animation_i8ouk"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_7e8nu"]
-resource_name = "animacaochicotada"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_cv3i8"]
-_data = {
-"RESET": SubResource("Animation_i8ouk"),
-"animacaochicotada": SubResource("Animation_7e8nu")
-}
-
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_trj7f"]
 a = Vector2(-34, -175)
 b = Vector2(-35, 119)
@@ -96,11 +84,6 @@ metadata/_edit_lock_ = true
 position = Vector2(9, -5)
 shape = SubResource("CapsuleShape2D_g2xhg")
 metadata/_edit_lock_ = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
-libraries = {
-"": SubResource("AnimationLibrary_cv3i8")
-}
 
 [node name="Seahorse" type="Sprite2D" parent="Player"]
 texture = ExtResource("5_mk8ne")
@@ -623,6 +606,7 @@ metadata/_edit_lock_ = true
 
 [node name="AudioAlarme" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_7vyg6")
+volume_db = -6.438
 autoplay = true
 metadata/_edit_lock_ = true
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cordtn31r07jf"]
+[gd_scene load_steps=5 format=3 uid="uid://cordtn31r07jf"]
 
 [ext_resource type="Texture2D" uid="uid://682g6x24rfwf" path="res://sprites/baleiachicote.png" id="1_h5u4t"]
 [ext_resource type="Script" path="res://scripts/control.gd" id="2_duyir"]
 [ext_resource type="Script" path="res://scripts/button.gd" id="2_w06vh"]
+[ext_resource type="AudioStream" uid="uid://c1oqikje1hyju" path="res://audio/Europe - The Final Countdown (Official Video) [9jK-NcRmVcw] (mp3cut.net).mp3" id="4_kwb1t"]
 
 [node name="Menu" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -31,5 +32,10 @@ offset_right = 179.0
 offset_bottom = 32.0
 script = ExtResource("2_w06vh")
 metadata/_edit_lock_ = true
+
+[node name="Fundo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_kwb1t")
+volume_db = 10.782
+autoplay = true
 
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]

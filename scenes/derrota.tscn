@@ -1,8 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2flgcxijoe7f"]
+[gd_scene load_steps=9 format=3 uid="uid://b2flgcxijoe7f"]
 
 [ext_resource type="Texture2D" uid="uid://brcjghvnettxa" path="res://sprites/derrota.png" id="1_85t7p"]
 [ext_resource type="Script" path="res://scripts/control.gd" id="2_de643"]
+[ext_resource type="Texture2D" uid="uid://dcw3wvm6duf46" path="res://sprites/jubarte2.png" id="2_yctkt"]
+[ext_resource type="Texture2D" uid="uid://dfogjbb5eboh" path="res://sprites/jubarte1.png" id="3_jl80c"]
 [ext_resource type="Script" path="res://scripts/button.gd" id="3_s3uxo"]
+[ext_resource type="AudioStream" uid="uid://cjadjxxxddb41" path="res://audio/Fart.wav" id="4_2fpgn"]
+[ext_resource type="AudioStream" uid="uid://h2hahgc2gat2" path="res://audio/Fart(2)(1) (mp3cut.net).mp3" id="7_b3305"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jxf2c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yctkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jl80c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yctkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jl80c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="Derrota" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -11,6 +35,14 @@ metadata/_edit_lock_ = true
 position = Vector2(576.25, 309)
 scale = Vector2(0.754232, 0.666016)
 texture = ExtResource("1_85t7p")
+metadata/_edit_lock_ = true
+
+[node name="Baleia2" type="AnimatedSprite2D" parent="."]
+position = Vector2(719, 393)
+rotation = 1.54452
+scale = Vector2(6.02188, 5.85628)
+sprite_frames = SubResource("SpriteFrames_jxf2c")
+frame_progress = 0.815019
 metadata/_edit_lock_ = true
 
 [node name="Control" type="Control" parent="."]
@@ -30,5 +62,16 @@ offset_top = 120.0
 offset_right = 138.0
 offset_bottom = 138.0
 script = ExtResource("3_s3uxo")
+
+[node name="SOOM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_b3305")
+volume_db = 11.39
+autoplay = true
+metadata/_edit_lock_ = true
+
+[node name="Peido" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2fpgn")
+volume_db = 24.0
+autoplay = true
 
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
