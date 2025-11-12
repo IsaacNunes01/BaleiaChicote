@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv2m6muo2ldh7"
-path="res://.godot/imported/Fazendeira.png-e8db48ab456b8ff9f1a3aa22010d051f.ctex"
+uid="uid://brcjghvnettxa"
+path="res://.godot/imported/derrota.png-2881e65c2bf2dae53b9be73d7ca99f87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Fazendeira.png"
-dest_files=["res://.godot/imported/Fazendeira.png-e8db48ab456b8ff9f1a3aa22010d051f.ctex"]
+source_file="res://sprites/derrota.png"
+dest_files=["res://.godot/imported/derrota.png-2881e65c2bf2dae53b9be73d7ca99f87.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfi8dqs14tcta"
-path="res://.godot/imported/FundoDoMar.png-7bf838439c54c547ff77da2a9803f35a.ctex"
+uid="uid://cbid3hk16lxkx"
+path="res://.godot/imported/seahorsechicote2.png-2742bee745b6a8a59feffcb78144bb68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/FundoDoMar.png"
-dest_files=["res://.godot/imported/FundoDoMar.png-7bf838439c54c547ff77da2a9803f35a.ctex"]
+source_file="res://sprites/seahorsechicote2.png"
+dest_files=["res://.godot/imported/seahorsechicote2.png-2742bee745b6a8a59feffcb78144bb68.ctex"]
 
 [params]
 

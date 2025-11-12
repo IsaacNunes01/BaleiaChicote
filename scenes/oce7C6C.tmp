@@ -1,9 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://b5m7cjrvxyv38"]
+[gd_scene load_steps=30 format=3 uid="uid://b5m7cjrvxyv38"]
 
 [ext_resource type="Texture2D" uid="uid://dfogjbb5eboh" path="res://sprites/jubarte1.png" id="1_ijn1w"]
 [ext_resource type="Script" path="res://scripts/ocean.gd" id="1_shac2"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_0uqq0"]
-[ext_resource type="Texture2D" uid="uid://ba2nwe84a3yh3" path="res://sprites/fundo1.png" id="2_p7p1o"]
+[ext_resource type="Texture2D" uid="uid://bvaspus1l20tx" path="res://sprites/Fundodomar.jpg" id="2_jc4n0"]
 [ext_resource type="Texture2D" uid="uid://dcw3wvm6duf46" path="res://sprites/jubarte2.png" id="2_t8vyn"]
 [ext_resource type="Texture2D" uid="uid://crm7888565kxg" path="res://sprites/jubarteboca1.png" id="4_tkkna"]
 [ext_resource type="Texture2D" uid="uid://bhw75wworeumx" path="res://sprites/jubarteboca2.png" id="5_ekeg0"]
@@ -11,9 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://cbk7jkr1ntytr" path="res://sprites/peixe1.png" id="6_xfldy"]
 [ext_resource type="Texture2D" uid="uid://ctmfnxn5yeegg" path="res://sprites/peixe2.png" id="7_merca"]
 [ext_resource type="AudioStream" uid="uid://bkqmr25nlucmq" path="res://audio/whip-02-242215.mp3" id="8_2435a"]
+[ext_resource type="Texture2D" uid="uid://cua0cobjoyryu" path="res://sprites/seahorsechicote1.png" id="8_f43l7"]
 [ext_resource type="Script" path="res://scripts/peixe_2.gd" id="8_kqtj2"]
 [ext_resource type="Texture2D" uid="uid://dwiao51h1bw57" path="res://sprites/peixe3.png" id="8_wjm1k"]
+[ext_resource type="Texture2D" uid="uid://cbid3hk16lxkx" path="res://sprites/seahorsechicote2.png" id="9_tfim4"]
 [ext_resource type="AudioStream" uid="uid://cnu75wrb4nr52" path="res://audio/whale-song-382729.mp3" id="11_73rcm"]
+[ext_resource type="Script" path="res://scenes/animated_sprite_2d.gd" id="11_bwhg4"]
 [ext_resource type="AudioStream" uid="uid://crrmqoojw0jox" path="res://audio/ALRM.ogg" id="15_7vyg6"]
 [ext_resource type="Script" path="res://scripts/player_2.gd" id="17_cb3n1"]
 
@@ -44,17 +47,31 @@ animations = [{
 radius = 22.0
 height = 68.0
 
-[sub_resource type="Animation" id="Animation_i8ouk"]
-length = 0.001
-
 [sub_resource type="Animation" id="Animation_7e8nu"]
 resource_name = "animacaochicotada"
+
+[sub_resource type="Animation" id="Animation_i8ouk"]
+length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cv3i8"]
 _data = {
 "RESET": SubResource("Animation_i8ouk"),
 "animacaochicotada": SubResource("Animation_7e8nu")
 }
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_edn6m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_f43l7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tfim4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_trj7f"]
 a = Vector2(-34, -175)
@@ -76,9 +93,10 @@ script = ExtResource("1_shac2")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(577, 325)
-scale = Vector2(1.00174, 1.00309)
-texture = ExtResource("2_p7p1o")
+position = Vector2(574.75, 327.25)
+scale = Vector2(1.50915, 1.35832)
+texture = ExtResource("2_jc4n0")
+metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(633, -14.5)
@@ -105,6 +123,10 @@ libraries = {
 [node name="Seahorse" type="Sprite2D" parent="Player"]
 texture = ExtResource("5_mk8ne")
 metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_edn6m")
+script = ExtResource("11_bwhg4")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(35, 532)
@@ -491,8 +513,9 @@ stream = ExtResource("11_73rcm")
 metadata/_edit_lock_ = true
 
 [node name="Peixe15" type="CharacterBody2D" parent="."]
-position = Vector2(1027, 3819)
+position = Vector2(1099, 4219)
 script = ExtResource("8_kqtj2")
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Peixe15"]
 position = Vector2(0, -4.17233e-07)
@@ -517,8 +540,9 @@ stream = ExtResource("11_73rcm")
 metadata/_edit_lock_ = true
 
 [node name="Peixe16" type="CharacterBody2D" parent="."]
-position = Vector2(538, 4207)
+position = Vector2(338, 4511)
 script = ExtResource("8_kqtj2")
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Peixe16"]
 position = Vector2(0, -4.17233e-07)
@@ -543,8 +567,9 @@ stream = ExtResource("11_73rcm")
 metadata/_edit_lock_ = true
 
 [node name="Peixe17" type="CharacterBody2D" parent="."]
-position = Vector2(867, 4677)
+position = Vector2(771, 5453)
 script = ExtResource("8_kqtj2")
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Peixe17"]
 position = Vector2(0, -4.17233e-07)
@@ -569,8 +594,9 @@ stream = ExtResource("11_73rcm")
 metadata/_edit_lock_ = true
 
 [node name="Peixe18" type="CharacterBody2D" parent="."]
-position = Vector2(1215, 5117)
+position = Vector2(1343, 6245)
 script = ExtResource("8_kqtj2")
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Peixe18"]
 position = Vector2(0, -4.17233e-07)
@@ -595,7 +621,7 @@ stream = ExtResource("11_73rcm")
 metadata/_edit_lock_ = true
 
 [node name="Peixe19" type="CharacterBody2D" parent="."]
-position = Vector2(961, 5471)
+position = Vector2(1145, 6839)
 script = ExtResource("8_kqtj2")
 metadata/_edit_lock_ = true
 
@@ -624,240 +650,5 @@ metadata/_edit_lock_ = true
 [node name="AudioAlarme" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_7vyg6")
 autoplay = true
-metadata/_edit_lock_ = true
-
-[node name="Peixe20" type="CharacterBody2D" parent="."]
-position = Vector2(105, 5767)
-script = ExtResource("8_kqtj2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Peixe20"]
-position = Vector2(0, -4.17233e-07)
-scale = Vector2(1.375, 1.28125)
-texture = ExtResource("7_merca")
-metadata/_edit_lock_ = true
-
-[node name="Area2D" type="Area2D" parent="Peixe20"]
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peixe20/Area2D"]
-position = Vector2(-5.5, -3.5)
-shape = SubResource("RectangleShape2D_k8jtg")
-metadata/_edit_lock_ = true
-
-[node name="AudioChicote" type="AudioStreamPlayer2D" parent="Peixe20"]
-stream = ExtResource("8_2435a")
-metadata/_edit_lock_ = true
-
-[node name="AudioBaleia" type="AudioStreamPlayer2D" parent="Peixe20"]
-stream = ExtResource("11_73rcm")
-metadata/_edit_lock_ = true
-
-[node name="Peixe21" type="CharacterBody2D" parent="."]
-position = Vector2(1281, 5815)
-script = ExtResource("8_kqtj2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Peixe21"]
-position = Vector2(0, -4.17233e-07)
-scale = Vector2(1.375, 1.28125)
-texture = ExtResource("7_merca")
-metadata/_edit_lock_ = true
-
-[node name="Area2D" type="Area2D" parent="Peixe21"]
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peixe21/Area2D"]
-position = Vector2(-5.5, -3.5)
-shape = SubResource("RectangleShape2D_k8jtg")
-metadata/_edit_lock_ = true
-
-[node name="AudioChicote" type="AudioStreamPlayer2D" parent="Peixe21"]
-stream = ExtResource("8_2435a")
-metadata/_edit_lock_ = true
-
-[node name="AudioBaleia" type="AudioStreamPlayer2D" parent="Peixe21"]
-stream = ExtResource("11_73rcm")
-metadata/_edit_lock_ = true
-
-[node name="Peixe22" type="CharacterBody2D" parent="."]
-position = Vector2(1137, 6303)
-script = ExtResource("8_kqtj2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Peixe22"]
-position = Vector2(0, -4.17233e-07)
-scale = Vector2(1.375, 1.28125)
-texture = ExtResource("7_merca")
-metadata/_edit_lock_ = true
-
-[node name="Area2D" type="Area2D" parent="Peixe22"]
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peixe22/Area2D"]
-position = Vector2(-5.5, -3.5)
-shape = SubResource("RectangleShape2D_k8jtg")
-metadata/_edit_lock_ = true
-
-[node name="AudioChicote" type="AudioStreamPlayer2D" parent="Peixe22"]
-stream = ExtResource("8_2435a")
-metadata/_edit_lock_ = true
-
-[node name="AudioBaleia" type="AudioStreamPlayer2D" parent="Peixe22"]
-stream = ExtResource("11_73rcm")
-metadata/_edit_lock_ = true
-
-[node name="Peixe23" type="CharacterBody2D" parent="."]
-position = Vector2(465, 5519)
-script = ExtResource("8_kqtj2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Peixe23"]
-position = Vector2(0, -4.17233e-07)
-scale = Vector2(1.375, 1.28125)
-texture = ExtResource("7_merca")
-metadata/_edit_lock_ = true
-
-[node name="Area2D" type="Area2D" parent="Peixe23"]
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peixe23/Area2D"]
-position = Vector2(-5.5, -3.5)
-shape = SubResource("RectangleShape2D_k8jtg")
-metadata/_edit_lock_ = true
-
-[node name="AudioChicote" type="AudioStreamPlayer2D" parent="Peixe23"]
-stream = ExtResource("8_2435a")
-metadata/_edit_lock_ = true
-
-[node name="AudioBaleia" type="AudioStreamPlayer2D" parent="Peixe23"]
-stream = ExtResource("11_73rcm")
-metadata/_edit_lock_ = true
-
-[node name="Peixe24" type="CharacterBody2D" parent="."]
-position = Vector2(857, 6383)
-script = ExtResource("8_kqtj2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Peixe24"]
-position = Vector2(0, -4.17233e-07)
-scale = Vector2(1.375, 1.28125)
-texture = ExtResource("7_merca")
-metadata/_edit_lock_ = true
-
-[node name="Area2D" type="Area2D" parent="Peixe24"]
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peixe24/Area2D"]
-position = Vector2(-5.5, -3.5)
-shape = SubResource("RectangleShape2D_k8jtg")
-metadata/_edit_lock_ = true
-
-[node name="AudioChicote" type="AudioStreamPlayer2D" parent="Peixe24"]
-stream = ExtResource("8_2435a")
-metadata/_edit_lock_ = true
-
-[node name="AudioBaleia" type="AudioStreamPlayer2D" parent="Peixe24"]
-stream = ExtResource("11_73rcm")
-metadata/_edit_lock_ = true
-
-[node name="Peixe25" type="CharacterBody2D" parent="."]
-position = Vector2(561, 6311)
-script = ExtResource("8_kqtj2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Peixe25"]
-position = Vector2(0, -4.17233e-07)
-scale = Vector2(1.375, 1.28125)
-texture = ExtResource("7_merca")
-metadata/_edit_lock_ = true
-
-[node name="Area2D" type="Area2D" parent="Peixe25"]
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peixe25/Area2D"]
-position = Vector2(-5.5, -3.5)
-shape = SubResource("RectangleShape2D_k8jtg")
-metadata/_edit_lock_ = true
-
-[node name="AudioChicote" type="AudioStreamPlayer2D" parent="Peixe25"]
-stream = ExtResource("8_2435a")
-metadata/_edit_lock_ = true
-
-[node name="AudioBaleia" type="AudioStreamPlayer2D" parent="Peixe25"]
-stream = ExtResource("11_73rcm")
-metadata/_edit_lock_ = true
-
-[node name="Peixe26" type="CharacterBody2D" parent="."]
-position = Vector2(201, 6383)
-script = ExtResource("8_kqtj2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Peixe26"]
-position = Vector2(0, -4.17233e-07)
-scale = Vector2(1.375, 1.28125)
-texture = ExtResource("7_merca")
-metadata/_edit_lock_ = true
-
-[node name="Area2D" type="Area2D" parent="Peixe26"]
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peixe26/Area2D"]
-position = Vector2(-5.5, -3.5)
-shape = SubResource("RectangleShape2D_k8jtg")
-metadata/_edit_lock_ = true
-
-[node name="AudioChicote" type="AudioStreamPlayer2D" parent="Peixe26"]
-stream = ExtResource("8_2435a")
-metadata/_edit_lock_ = true
-
-[node name="AudioBaleia" type="AudioStreamPlayer2D" parent="Peixe26"]
-stream = ExtResource("11_73rcm")
-metadata/_edit_lock_ = true
-
-[node name="Peixe27" type="CharacterBody2D" parent="."]
-position = Vector2(1121, 6775)
-script = ExtResource("8_kqtj2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Peixe27"]
-position = Vector2(0, -4.17233e-07)
-scale = Vector2(1.375, 1.28125)
-texture = ExtResource("7_merca")
-metadata/_edit_lock_ = true
-
-[node name="Area2D" type="Area2D" parent="Peixe27"]
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peixe27/Area2D"]
-position = Vector2(-5.5, -3.5)
-shape = SubResource("RectangleShape2D_k8jtg")
-metadata/_edit_lock_ = true
-
-[node name="AudioChicote" type="AudioStreamPlayer2D" parent="Peixe27"]
-stream = ExtResource("8_2435a")
-metadata/_edit_lock_ = true
-
-[node name="AudioBaleia" type="AudioStreamPlayer2D" parent="Peixe27"]
-stream = ExtResource("11_73rcm")
-metadata/_edit_lock_ = true
-
-[node name="Peixe28" type="CharacterBody2D" parent="."]
-position = Vector2(73, 6735)
-script = ExtResource("8_kqtj2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Peixe28"]
-position = Vector2(0, -4.17233e-07)
-scale = Vector2(1.375, 1.28125)
-texture = ExtResource("7_merca")
-metadata/_edit_lock_ = true
-
-[node name="Area2D" type="Area2D" parent="Peixe28"]
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peixe28/Area2D"]
-position = Vector2(-5.5, -3.5)
-shape = SubResource("RectangleShape2D_k8jtg")
-metadata/_edit_lock_ = true
-
-[node name="AudioChicote" type="AudioStreamPlayer2D" parent="Peixe28"]
-stream = ExtResource("8_2435a")
-metadata/_edit_lock_ = true
-
-[node name="AudioBaleia" type="AudioStreamPlayer2D" parent="Peixe28"]
-stream = ExtResource("11_73rcm")
-metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="Player2/Area2D2" to="Peixe2" method="_on_area_2d_2_body_entered"]
